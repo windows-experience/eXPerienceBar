@@ -1,0 +1,159 @@
+﻿<!-- Base style definitions for the Luna theme. -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:xpbar="clr-namespace:eXPerienceBar.UI.Behaviors"
+>
+    <LinearGradientBrush x:Key="BaseBackgroundColor" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0.0" Color="#7ba2e7"/>
+        <GradientStop Offset="1.0" Color="#6375d6"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="ContentBackgroundColor" Color="#d6dff7"/>
+    <SolidColorBrush x:Key="ContentForegroundColor" Color="#215dc6"/>
+    <SolidColorBrush x:Key="ContentForegroundHoverColor" Color="#428EFF"/>
+    <SolidColorBrush x:Key="ContentBorderColor" Color="#fff"/>
+    <SolidColorBrush x:Key="HeaderForegroundColor" Color="#215dc6"/>
+    <SolidColorBrush x:Key="HeaderForegroundHoverColor" Color="#428EFF"/>
+
+    <!-- Template for the CollapsibleSection element; XP Sidebar sections. -->
+    <Style TargetType="{x:Type xpbar:CollapsibleSection}">
+        <Setter Property="Margin" Value="0 12 0 0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type xpbar:CollapsibleSection}">
+
+                    <StackPanel Orientation="Vertical">
+                        <ToggleButton
+                            x:Name="PartHeader"
+                            Content="{TemplateBinding Header}"
+                            Style="{DynamicResource XPPanelHeader}"
+                        />
+                        <xpbar:CollapsibleDecorator x:Name="PartContent" MaxHeight="9999">
+                            <Border 
+                                BorderThickness="1, 0, 1, 1"
+                                BorderBrush="{DynamicResource ContentBorderColor}"
+                                Background="{DynamicResource ContentBackgroundColor}"
+                                SnapsToDevicePixels="True"
+                                FocusVisualStyle="{x:Null}"
+                            >
+                                <ContentPresenter/>
+                            </Border>
+                        </xpbar:CollapsibleDecorator>
+                    </StackPanel>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Template for the header of a collapsible sidebar section. -->
+    <Style x:Key="XPPanelHeader" TargetType="ToggleButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource HeaderForegroundColor}"/>
+        <Setter Property="FontFamily" Value="Tahoma"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Cursor" Value="Hand"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+
+                    <Grid Height="25">
+                        <Border FocusVisualStyle="{x:Null}">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/eXPerienceBar;component/UI/Themes/Luna.DefaultColor/section_header.png"/>
+                            </Border.Background>
+
+                            <DockPanel>
+                                <Grid DockPanel.Dock="Right" Margin="0 2 2 0">
+                                    <Image Source="/eXPerienceBar;component/UI/Themes/Luna.DefaultColor/collapse_button.png" 
+                                           Width="21"
+                                           Height="23"
+                                           HorizontalAlignment="Right"
+                                           SnapsToDevicePixels="True"
+                                           RenderOptions.EdgeMode="Aliased"
+                                           RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                           Stretch="None"
+                                           x:Name="PartExpanderIcon"
+                                    />
+                                </Grid>
+
+                                <ContentPresenter x:Name="PartContentSite" 
+                                                  Content="{TemplateBinding Content}"
+                                                  Margin="12, 6, 10, 0"
+                                                  HorizontalAlignment="Left" VerticalAlignment="Top"
+                                >
+                                    <ContentPresenter.Resources>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+                                        </Style>
+                                    </ContentPresenter.Resources>
+                                </ContentPresenter>
+                            </DockPanel>
+                        </Border>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource HeaderForegroundHoverColor}"/>
+                            <Setter TargetName="PartExpanderIcon" Property="Source" Value="/eXPerienceBar;component/UI/Themes/Luna.DefaultColor/collapse_button_hover.png" />
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="PartExpanderIcon" Property="Source" Value="/eXPerienceBar;component/UI/Themes/Luna.DefaultColor/expand_button.png" />
+                        </Trigger>
+
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True"/>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" Value="False"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="PartExpanderIcon" Property="Source" Value="/eXPerienceBar;component/UI/Themes/Luna.DefaultColor/expand_button_hover.png" />
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type xpbar:PanelLinkButton}">
+        <Setter Property="FontFamily" Value="Tahoma"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type xpbar:PanelLinkButton}">
+
+                    <!-- Transparent background to make the entire thing support mouse over. -->
+                    <DockPanel LastChildFill="True" Background="Transparent">
+                        <Image x:Name="PartIcon" Margin="3, 2, 0, 2" DockPanel.Dock="Left" Source="{TemplateBinding Icon}" Width="16" Height="16"/>
+                        <TextBlock x:Name="PartLabel"
+                                   DockPanel.Dock="Left" Margin="7, 0, 0, 0" 
+                                   VerticalAlignment="Center"
+                                   Text="{TemplateBinding Label}"
+                                   TextWrapping="Wrap"
+                                   Foreground="{DynamicResource ContentForegroundColor}"
+                        />
+                    </DockPanel>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter TargetName="PartIcon" Property="Width" Value="0" />
+                            <Setter TargetName="PartLabel" Property="Margin" Value="3, 0, 0, 0" />
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="PartLabel" Property="TextDecorations" Value="Underline" />
+                            <Setter TargetName="PartLabel" Property="Foreground" Value="{DynamicResource ContentForegroundHoverColor}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

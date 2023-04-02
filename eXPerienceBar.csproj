@@ -1,0 +1,109 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net6-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<PackageId>YukisCoffee.$(AssemblyName)</PackageId>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>C:\Users\Taniko\Documents\projects\XPSidebar\sgKey.snk</AssemblyOriginatorKeyFile>
+		<StartupObject></StartupObject>
+		<IsPublishable>False</IsPublishable>
+		<Authors>Taniko Yamamoto</Authors>
+		<Company>Taniko Yamamoto</Company>
+		<Description>A clone of the Windows XP Explorer sidebar.</Description>
+
+		<!-- Used for the COM Host: -->
+		<EnableComHosting>true</EnableComHosting>
+		<ComHostSourcePath>.\comhost_template.dll</ComHostSourcePath>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="trash\**" />
+	  <EmbeddedResource Remove="trash\**" />
+	  <None Remove="trash\**" />
+	  <Page Remove="trash\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ApplicationDefinition Remove="App.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<RuntimeHostConfigurationOption Include="System.Runtime.InteropServices.COM.LoadComponentInDefaultContext" Value="true" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<Compile Remove="AssemblyInfo.cs" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<None Remove="aaaaaaaa.PNG" />
+		<None Remove="UI\Themes\Luna.DefaultColor\collapse_button.png" />
+		<None Remove="UI\Themes\Luna.DefaultColor\collapse_button_hover.png" />
+		<None Remove="UI\Themes\Luna.DefaultColor\expand_button.png" />
+		<None Remove="UI\Themes\Luna.DefaultColor\expand_button_hover.png" />
+		<None Remove="UI\Themes\Luna.DefaultColor\section_header.png" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<COMReference Include="SHDocVw">
+			<WrapperTool>tlbimp</WrapperTool>
+			<VersionMinor>1</VersionMinor>
+			<VersionMajor>1</VersionMajor>
+			<Guid>eab22ac0-30c1-11cf-a7eb-0000c05bae0b</Guid>
+			<Lcid>0</Lcid>
+			<Isolated>false</Isolated>
+			<EmbedInteropTypes>true</EmbedInteropTypes>
+		</COMReference>
+		<COMReference Include="Shell32">
+			<WrapperTool>tlbimp</WrapperTool>
+			<VersionMinor>0</VersionMinor>
+			<VersionMajor>1</VersionMajor>
+			<Guid>50a7e9b0-70ef-11d1-b75a-00a0c90564fe</Guid>
+			<Lcid>0</Lcid>
+			<Isolated>false</Isolated>
+			<EmbedInteropTypes>true</EmbedInteropTypes>
+			<Aliases></Aliases>
+		</COMReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="AssemblyInfo.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="aaaaaaaa.PNG" />
+		<Resource Include="UI\Themes\Luna.DefaultColor\collapse_button.png" />
+		<Resource Include="UI\Themes\Luna.DefaultColor\collapse_button_hover.png" />
+		<Resource Include="UI\Themes\Luna.DefaultColor\expand_button.png" />
+		<Resource Include="UI\Themes\Luna.DefaultColor\expand_button_hover.png" />
+		<Resource Include="UI\Themes\Luna.DefaultColor\section_header.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Shell\" />
+	</ItemGroup>
+
+</Project>

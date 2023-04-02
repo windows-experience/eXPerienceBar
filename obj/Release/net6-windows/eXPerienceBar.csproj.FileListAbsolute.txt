@@ -1,0 +1,13 @@
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\eXPerienceBar.csproj.AssemblyReference.cache
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\Interop.SHDocVw.dll
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\Interop.Shell32.dll
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\eXPerienceBar.csproj.ResolveComReference.cache
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\UI\Themes\Luna.DefaultColor.baml
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\UI\Sidebar.g.cs
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\eXPerienceBar_MarkupCompile.cache
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\eXPerienceBar_MarkupCompile.lref
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\UI\Sidebar.baml
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\eXPerienceBar.dll
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\refint\eXPerienceBar.dll
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Release\net6-windows\eXPerienceBar.pdb

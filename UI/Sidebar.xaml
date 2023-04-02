@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="eXPerienceBar.UI.Sidebar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:eXPerienceBar.UI"
+             xmlns:xpsidebar="clr-namespace:eXPerienceBar.UI.Behaviors"
+             mc:Ignorable="d" 
+             d:DesignWidth="210" d:DesignHeight="450"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             MinWidth="200"
+             MinHeight="300"
+             TextOptions.TextFormattingMode="Display"
+             TextOptions.TextRenderingMode="Aliased"
+             Background="{DynamicResource BaseBackgroundColor}">
+    <UserControl.Resources>
+        <ResourceDictionary Source="Themes/Luna.DefaultColor.xaml"/>
+    </UserControl.Resources>
+    <UserControl.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="I love yuki" />
+            <MenuItem Header="And I love kira" />
+        </ContextMenu>
+    </UserControl.ContextMenu>
+    <Border BorderBrush="White" BorderThickness="1, 0, 0, 1">
+        <Grid>
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Padding="12, 0" IsTabStop="False">
+                <StackPanel x:Name="PartSections">
+                    <xpsidebar:CollapsibleSection Header="Items!!" IsExpanded="True">
+                        <xpsidebar:CollapsibleSection.Resources>
+                            <ContextMenu x:Key="hi">
+                                <MenuItem Header="hi" />
+                            </ContextMenu>
+                        </xpsidebar:CollapsibleSection.Resources>
+                        <Border Padding="10">
+                            <StackPanel>
+                                <xpsidebar:PanelLinkButton Label="Fucking" Icon="/eXPerienceBar;component/aaaaaaaa.PNG" />
+                                <xpsidebar:PanelLinkButton Label="Finally." Icon="/eXPerienceBar;component/aaaaaaaa.PNG" />
+                            </StackPanel>
+                        </Border>
+                    </xpsidebar:CollapsibleSection>
+                    <xpsidebar:CollapsibleSection Header="Test category" IsExpanded="False">
+                        <StackPanel>
+                            <Label FontFamily="Tahoma" FontSize="8pt">I love yuki so much</Label>
+                            <Image Source="/eXPerienceBar;component/aaaaaaaa.PNG" Margin="12"/>
+                        </StackPanel>
+                    </xpsidebar:CollapsibleSection>
+                    <xpsidebar:CollapsibleSection Header="Debug" IsExpanded="False">
+                        <StackPanel>
+                            <ListBox x:Name="PartDebugBox" FontFamily="Tahoma" FontSize="8pt" MaxHeight="350px" />
+                        </StackPanel>
+                    </xpsidebar:CollapsibleSection>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</UserControl>

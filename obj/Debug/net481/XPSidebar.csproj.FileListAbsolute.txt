@@ -1,0 +1,5 @@
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Debug\net481\XPSidebar.csproj.AssemblyReference.cache
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Debug\net481\XPSidebar.csproj.SuggestedBindingRedirects.cache
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Debug\net481\MainWindow.g.cs
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Debug\net481\XPSidebar_MarkupCompile.cache
+C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Debug\net481\XPSidebar_MarkupCompile.lref
