@@ -7,7 +7,7 @@
 		<UseWPF>true</UseWPF>
 		<PackageId>YukisCoffee.$(AssemblyName)</PackageId>
 		<SignAssembly>True</SignAssembly>
-		<AssemblyOriginatorKeyFile>C:\Users\Taniko\Documents\projects\XPSidebar\sgKey.snk</AssemblyOriginatorKeyFile>
+		<AssemblyOriginatorKeyFile>sgKey.snk</AssemblyOriginatorKeyFile>
 		<StartupObject></StartupObject>
 		<IsPublishable>False</IsPublishable>
 		<Authors>Taniko Yamamoto</Authors>

@@ -79,7 +79,12 @@ public class ShellController
         }
     }
 
-    private async Task<InternetExplorer> GetExplorerHandler(IntPtr childHwnd)
+    public void NavigateTo(string path)
+    {
+        shellWindow.Navigate(@path, "navOpenInNewWindow");
+    }
+
+        private async Task<InternetExplorer> GetExplorerHandler(IntPtr childHwnd)
     {
         debug?.AddMessage("Running async ShellController.GetExplorerHandler");
         IntPtr baseHwnd = GetAncestor(childHwnd, GetAncestorFlags.GetRootOwner);
