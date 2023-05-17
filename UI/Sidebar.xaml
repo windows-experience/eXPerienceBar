@@ -26,7 +26,7 @@
         <Grid>
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Padding="12, 0" IsTabStop="False">
                 <StackPanel x:Name="PartSections">
-                    <xpsidebar:CollapsibleSection Header="Items!!" IsExpanded="True">
+                    <xpsidebar:CollapsibleSection Header="System Tasks" IsExpanded="True">
                         <xpsidebar:CollapsibleSection.Resources>
                             <ContextMenu x:Key="hi">
                                 <MenuItem Header="hi" />
@@ -34,16 +34,21 @@
                         </xpsidebar:CollapsibleSection.Resources>
                         <Border Padding="10">
                             <StackPanel>
-                                <xpsidebar:PanelLinkButton Label="Fucking" Icon="/eXPerienceBar;component/aaaaaaaa.PNG" />
-                                <xpsidebar:PanelLinkButton Label="Finally." Icon="/eXPerienceBar;component/aaaaaaaa.PNG" />
+                                <xpsidebar:PanelLinkButton Label="View system information" Icon="/eXPerienceBar;component/aaaaaaaa.PNG" Click="PanelLinkButton_Click" />
+                                <xpsidebar:PanelLinkButton Label="Add or remove programs." Icon="/eXPerienceBar;component/aaaaaaaa.PNG" Click="PanelLinkButton_Click_1" />
+                                <xpsidebar:PanelLinkButton Label="Change a setting" Icon="/eXPerienceBar;component/aaaaaaaa.PNG"/>
                             </StackPanel>
                         </Border>
                     </xpsidebar:CollapsibleSection>
-                    <xpsidebar:CollapsibleSection Header="Test category" IsExpanded="False">
-                        <StackPanel>
-                            <Label FontFamily="Tahoma" FontSize="8pt">I love yuki so much</Label>
-                            <Image Source="/eXPerienceBar;component/aaaaaaaa.PNG" Margin="12"/>
-                        </StackPanel>
+                    <xpsidebar:CollapsibleSection Header="Other Places" IsExpanded="True">
+                        <Border Padding="10">
+                            <StackPanel>
+                                <xpsidebar:PanelLinkButton Label="My Network Places" Icon="/eXPerienceBar;component/aaaaaaaa.PNG" Click="PanelLinkButton_Click_2"/>
+                                <xpsidebar:PanelLinkButton Label="My Documents" Icon="/eXPerienceBar;component/aaaaaaaa.PNG" Click="PanelLinkButton_Click_3"/>
+                                <xpsidebar:PanelLinkButton Label="Shared Documents" Icon="/eXPerienceBar;component/aaaaaaaa.PNG"/>
+                                <xpsidebar:PanelLinkButton Label="Control Panel" Icon="/eXPerienceBar;component/aaaaaaaa.PNG"/>
+                            </StackPanel>
+                        </Border>
                     </xpsidebar:CollapsibleSection>
                     <xpsidebar:CollapsibleSection Header="Debug" IsExpanded="False">
                         <StackPanel>

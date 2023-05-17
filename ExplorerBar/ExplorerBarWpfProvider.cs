@@ -89,7 +89,7 @@ public abstract class ExplorerBarWpfProvider : IExplorerBar, IExplorerBarProvide
         return IntPtr.Zero;
     }
 
-    InternetExplorer? shellWindow = null;
+    public InternetExplorer? shellWindow = null;
 
     [DllImport("user32.dll", SetLastError = true)]
     static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
@@ -97,7 +97,7 @@ public abstract class ExplorerBarWpfProvider : IExplorerBar, IExplorerBarProvide
     // THIS IS A WORKING IMPLEMENTATION YAYY
     // dev note: move THIS implementation to separate Shell module later, this is very
     // useful thank youuu
-    private string? GetActiveExplorerPath()
+    public string? GetActiveExplorerPath()
     {
         if (shellWindow == null)
         {

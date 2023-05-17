@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\Taniko\Documents\projects\XPSidebar\XPSidebar\obj\Debug\net6-windows\
+C:\Users\Administrator\Downloads\eXPerienceBar-master\obj\Debug\net6-windows\
 eXPerienceBar
 none
 false
@@ -13,7 +13,7 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 41103949944
 
 3292692336
-1961249042506
+196-1146682708
 TestingWindow.xaml;UI\Sidebar.xaml;UI\Themes\Luna.DefaultColor.xaml;UI\Themes\Luna.Style.xaml;
 
 False

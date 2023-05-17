@@ -126,6 +126,7 @@ public class MainSidebar : ExplorerBarWpfProvider, IMainSidebarComServer
     private void HandleNavigate(object? sender, ShellController.NavigateEventArgs e)
     {
         Debug.AddMessage($"Navigated to: {e.NewPath ?? "<unknown path>"}");
+
     }
 
     public override UI.Sidebar UiElement => sidebarWindow;
